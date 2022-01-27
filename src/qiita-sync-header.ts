@@ -55,13 +55,11 @@ function renderTags(tags: string|undefined, tagsIcon: string): string  {
     </div>`
 }
 
-const render:(assets: RenderAssets) => RenderRule = (assets: RenderAssets) => (tokens: Token[], idx: number, options: MarkdownIt.Options, self: Renderer): string => {    
+const render:(assets: RenderAssets) => RenderRule = (assets: RenderAssets) => (tokens: Token[], idx: number, options: MarkdownIt.Options, env: any, self: Renderer): string => {    
     const lines: string[] = tokens[idx].meta    
-    const header = new Map(lines.map((line: string)=>line.split(':', 2).map(((i)=>i.trim()))).filter((kv: string[]) => kv.length === 2).map((kv)=>[kv[0], kv[1]]))
-    console.log(header)
+    const header = new Map(lines.map((line: string)=>line.split(':', 2).map(((i)=>i.trim()))).filter((kv: string[]) => kv.length === 2).map((kv)=>[kv[0], kv[1]]))    
 
-    return `${renderTitle(header.get('title'))}${renderTags(header.get('tags'), assets.tagsIcon)}`
-        
+    return `${renderTitle(header.get('title'))}${renderTags(header.get('tags'), assets.tagsIcon)}`    
 }
 
 export const markdownItQiitaSyncHeader :PluginSimple = (md: MarkdownIt): void => {

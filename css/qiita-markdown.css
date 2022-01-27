@@ -1,0 +1,46 @@
+/************************************************************************
+ * Qiita Colors
+ ************************************************************************/
+
+:root {
+    --qiita-code-block-background-color: #364549;
+    --qiita-code-title-background-color: #777777;
+}
+
+/************************************************************************
+ * Qiita Style
+ ************************************************************************/
+
+.qiita-style h1 {
+    color: red
+}
+.qiita-style h2 {
+    color: green
+}
+.qiita-style code {
+    background-color: #aaaaaa;
+}
+
+/************************************************************************
+ * Qiita Code
+ ************************************************************************/
+
+.qiita-code,
+.qiita-code div,
+.qiita-code pre,
+.qiita-code code {    
+    background-color: var(--qiita-code-block-background-color);    
+    background-blend-mode: unset;
+}
+.qiita-code-title {
+    color: white;
+    background-color: var(--qiita-code-title-background-color);
+    margin-left: 25px;
+    padding-inline: 5px;    
+}
+.qiita-code-block div {
+    color: white; 
+}
+.qiita-code-block .hljs-string {
+    color: white; 
+}

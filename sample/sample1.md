@@ -2,6 +2,13 @@
 title: 日本語のタイトル
 tags:  Typescript,Qiita,VSCode
 -->
+
+```typescript:additional-comment
+function hello():string {
+    return "hello, world!!"
+}
+```
+
 :::note info
 This is info
 :::

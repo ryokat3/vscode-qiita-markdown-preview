@@ -3,6 +3,8 @@ import * as path from "path"
 import MarkdownIt = require("markdown-it")
 import { markdownItQiitaNote } from "../src/qiita-note"
 import { markdownItQiitaSyncHeader } from "../src/qiita-sync-header"
+import { markdownItQiitaCode } from "../src/qiita-code"
+import { activate } from "../src/extension"
 
 const sample1 = "sample/sample1.md"
 const htmlDir = "html"
@@ -15,8 +17,8 @@ function saveHtml(filePath: string, html: string): void {
 }
 
 describe("markdown-it-qiita-note", () => {
-    it("no plugin", ()=> {
-        const mdit = MarkdownIt().use(markdownItQiitaNote).use(markdownItQiitaSyncHeader)
+    it("no plugin", ()=> {        
+        const mdit = activate({} as any).extendMarkdownIt(MarkdownIt())
         const html = mdit.render(fs.readFileSync(sample1).toString())
         saveHtml(sample1, html)
     })
