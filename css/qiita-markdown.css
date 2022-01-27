@@ -10,7 +10,14 @@
     --qiita-code-block-color: #e3e3e3;
     --qiita-code-hljs-string: #88df4c;
     --qiita-code-hljs-link: #41b7d7;
+    --qiita-header-tags-icon: #666666;
     --qiita-inline-code-background-color: #eeeeee;
+    --qiita-note-info-background-color: #E5F8E2;
+    --qiita-note-info-icon-color: #55C500;
+    --qiita-note-warn-background-color: #FDF9E2;
+    --qiita-note-warn-icon-color: #F7A535;
+    --qiita-note-alert-background-color: #FBEFEE;
+    --qiita-note-alert-icon-color: #D60A34;
     --qita-code-font-family: SFMono-Regular, Consolas;
 }
 
@@ -55,6 +62,24 @@
     font-weight: bold;
     color: var(--qiita-style-color);
     margin: 49.28px 0px 24px   ;
+}
+.qiita-style h4 {
+    font-size: 19.2px;
+    font-weight: bold;
+    color: var(--qiita-style-color);
+    margin: 42.24px 0px 24px   ;
+}
+.qiita-style h5 {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--qiita-style-color);
+    margin: 35.2px 0px 24px   ;
+}
+.qiita-style h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--qiita-style-color);
+    margin: 35.2px 0px 24px   ;
 }
 .qiita-style ul {
     font-size: 16px;
@@ -105,7 +130,7 @@
 }
 .qiita-header-tags {
     font-size: 14px;
-    margin: 8px 0px 0px;
+    margin: 8px 0px 0px;    
     color: var(--qiita-style-color);    
 }
 
@@ -113,6 +138,11 @@
  * Qiita Code
  ************************************************************************/
 
+.qiita-code {
+    margin: 21.6px -32px;    
+    /* padding: 14.4px 32px; */
+    padding: 0px 32px;
+}
 .qiita-code,
 .qiita-code div,
 .qiita-code pre,
@@ -122,15 +152,14 @@
 }
 span.qiita-code-title {
     color: white;
-    background-color: var(--qiita-code-title-background-color);
-    margin-left: 25px;
-    padding-inline: 5px;    
+    background-color: var(--qiita-code-title-background-color);    
+    padding: 2px 5px 4px 8px 
 }
 .qiita-code-block div {
     font-family: var(--qita-code-font-family);
     font-size: 14.4px;
     color: var(--qiita-code-block-color);
-    padding: 7.2px;
+    /* padding: 7.2px; */
 }
 .qiita-code-block .hljs-string {
     font-family: var(--qita-code-font-family);
@@ -142,4 +171,35 @@ span.qiita-code-title {
     font-family: var(--qita-code-font-family);
     font-size: 14.4px;
     color: var(--qiita-code-hljs-link); 
+}
+.qiita-header-tags-icon {
+    color: var(--qiita-header-tags-icon)    
+}
+
+/************************************************************************
+ * Qiita Note
+ ************************************************************************/
+.qiita-note-info {
+    background-color: var(--qiita-note-info-background-color);
+    margin: 24px 0px;    
+}
+.qiita-note-info-icon {
+    color: var(--qiita-note-info-icon-color);
+}
+.qiita-note-warn {
+    background-color: var(--qiita-note-warn-background-color);    
+}
+.qiita-note-warn-icon {
+    color: var(--qiita-note-warn-icon-color);
+}
+.qiita-note-alert {
+    background-color: var(--qiita-note-alert-background-color);    
+}
+.qiita-note-alert-icon {
+    color: var(--qiita-note-alert-icon-color);
+}
+.qiita-note-body {
+    display: flex;
+    vertical-align: baseline;    
+    padding: 16px;
 }

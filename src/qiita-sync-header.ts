@@ -7,7 +7,7 @@ import Renderer = require("markdown-it/lib/renderer")
 import Token = require("markdown-it/lib/token")
 import { library, icon, Icon } from "@fortawesome/fontawesome-svg-core"
 import { faTags } from "@fortawesome/free-solid-svg-icons"
-import { icon2html } from "./utils"
+import { toIconHtml } from "./utils"
 
 const TAGS_ICON_FOREGROUND_COLOR = "#666666"
 
@@ -70,6 +70,6 @@ export const markdownItQiitaSyncHeader :PluginSimple = (md: MarkdownIt): void =>
         alt: [ 'paragraph', 'reference', 'blockquote', 'list' ]
       })
     md.renderer.rules['qiita-sync-header'] = render({
-        tagsIcon: icon2html(icon({ prefix: 'fas', iconName: 'tags'}), TAGS_ICON_FOREGROUND_COLOR)
+        tagsIcon: toIconHtml(icon({ prefix: 'fas', iconName: 'tags'}), "qiita-header-tags-icon")
     });
 }
