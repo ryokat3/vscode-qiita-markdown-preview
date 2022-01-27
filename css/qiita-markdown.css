@@ -3,7 +3,7 @@
  ************************************************************************/
 
 :root {
-    --qiita-style-background-color: #F6F6F4;
+    --qiita-style-background-color: #FFFFFF;
     --qiita-style-color: #333333;
     --qiita-code-block-background-color: #364549;
     --qiita-code-title-background-color: #777777;
@@ -18,29 +18,43 @@
  * Qiita Style
  ************************************************************************/
 
-.qiita-style,
+.qiita-style {
+    background-color: var(--qiita-style-background-color);
+    font-family: YakuHanJP, "Hiragino Sans", Meiryo, "Yu Gothic Medium", sans-serif;        
+    color: var(--qiita-style-color);
+    margin: 0px 0px 24px;
+    padding: 32px;
+}
+/*
 .qiita-style div,
 .qiita-style span,
 .qiita-style p
 {
     font-family: YakuHanJP, "Hiragino Sans", Meiryo, "Yu Gothic Medium", sans-serif;        
     color: var(--qiita-style-color);
+
 }
+*/
 .qiita-style h1 {
     font-size: 28.8px;
+    font-weight: bold;
     color: var(--qiita-style-color);
     margin: 63.36px 0px 24px;
     padding: 0px 0px 2.88px
 }
 .qiita-style h2 {
     font-size: 25.6px;
+    font-weight: bold;
     color: var(--qiita-style-color);
     margin: 56.32px 0px 24px;
     padding: 0px 0px 2.56px;
     border-bottom: 1px solid #CCC;    
 }
 .qiita-style h3 {
-    color: var(--qiita-style-color);    
+    font-size: 22.4px;
+    font-weight: bold;
+    color: var(--qiita-style-color);
+    margin: 49.28px 0px 24px   ;
 }
 .qiita-style ul {
     font-size: 16px;
@@ -67,13 +81,25 @@
     background-color: var(--qiita-inline-code-background-color);
     padding: 1.6px 6.4px
 }
-
+.qiita-style summary {
+    font-size: 16px;
+    color: var(--qiita-style-color);    
+}
+.qiita-style details {
+    font-size: 16px;
+    color: var(--qiita-style-color);
+    margin: 24px 0px  
+}
 /************************************************************************
  * Qiita Header
  ************************************************************************/
 
+ .qiita-header {    
+    margin: 0px 0px 48px;    
+}
 .qiita-header-title {
     font-size: 32px;
+    font-weight: bold;
     margin: 8px 0px 0px;
     color: var(--qiita-style-color);    
 }

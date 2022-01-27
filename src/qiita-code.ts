@@ -18,7 +18,7 @@ const render:(originalRule: RenderRule) => RenderRule = (originalRule: RenderRul
         return `<div class="qiita-code"><div><span class="qiita-code-title">${info}</span></div><div class="qiita-code-block">${code}</div></div>`        
     }
     else {
-        return originalRule(tokens, idx, options, env, self)
+        return `<div class="qiita-code"><div class="qiita-code-block">${originalRule(tokens, idx, options, env, self)}</div></div>`
     }
 }
 
