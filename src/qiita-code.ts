@@ -14,7 +14,7 @@ const render:(originalRule: RenderRule) => RenderRule = (originalRule: RenderRul
         const info = token.info.slice(token.info.indexOf(':') + 1)
         token.info = lang
         const code = originalRule(tokens, idx, options, env, self)
-                
+        console.log(code)                
         return `<div class="qiita-code"><div><span class="qiita-code-title">${info}</span></div><div class="qiita-code-block">${code}</div></div>`        
     }
     else {

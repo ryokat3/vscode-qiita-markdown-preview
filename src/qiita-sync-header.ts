@@ -45,11 +45,12 @@ const headerRuler: RuleBlock = (state: StateBlock, startLine: number, endLine: n
 }
 
 function renderTitle(title: string|undefined): string {
-    return `<div style="font-size:xx-large">${(title !== undefined) ? title : "No Title"}</div>`
+    // return `<div style="font-size:xx-large">${(title !== undefined) ? title : "No Title"}</div>`
+    return `<div class="qiita-header-title">${(title !== undefined) ? title : "No Title"}</div>`
 }
 
 function renderTags(tags: string|undefined, tagsIcon: string): string  {    
-    return `<div style="display:flex">
+    return `<div class="qiita-header-tags" style="display:flex">
     <div style="width:2%;height:2%;margin-top:auto;margin-bottom:auto;margin-left:10px;margin-right:10px">${tagsIcon}</div>
     <div>${(tags !== undefined) ? tags : "No Tags"}</div>
     </div>`

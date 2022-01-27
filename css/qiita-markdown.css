@@ -3,22 +3,84 @@
  ************************************************************************/
 
 :root {
+    --qiita-style-background-color: #F6F6F4;
+    --qiita-style-color: #333333;
     --qiita-code-block-background-color: #364549;
     --qiita-code-title-background-color: #777777;
+    --qiita-code-block-color: #e3e3e3;
+    --qiita-code-hljs-string: #88df4c;
+    --qiita-code-hljs-link: #41b7d7;
+    --qiita-inline-code-background-color: #eeeeee;
+    --qita-code-font-family: SFMono-Regular, Consolas;
 }
 
 /************************************************************************
  * Qiita Style
  ************************************************************************/
 
+.qiita-style,
+.qiita-style div,
+.qiita-style span,
+.qiita-style p
+{
+    font-family: YakuHanJP, "Hiragino Sans", Meiryo, "Yu Gothic Medium", sans-serif;        
+    color: var(--qiita-style-color);
+}
 .qiita-style h1 {
-    color: red
+    font-size: 28.8px;
+    color: var(--qiita-style-color);
+    margin: 63.36px 0px 24px;
+    padding: 0px 0px 2.88px
 }
 .qiita-style h2 {
-    color: green
+    font-size: 25.6px;
+    color: var(--qiita-style-color);
+    margin: 56.32px 0px 24px;
+    padding: 0px 0px 2.56px;
+    border-bottom: 1px solid #CCC;    
+}
+.qiita-style h3 {
+    color: var(--qiita-style-color);    
+}
+.qiita-style ul {
+    font-size: 16px;
+    color: var(--qiita-style-color);    
+    margin: 24px 0px;
+    padding: 0px 0px 0px 24px;
+}
+.qiita-style ol {
+    font-size: 16px;
+    color: var(--qiita-style-color);    
+    margin: 24px 0px;
+    padding: 0px 0px 0px 24px;
+}
+.qiita-style img {    
+    margin: 24px 0px;    
+}
+.qiita-style p {
+    font-size: 16px;
+    color: var(--qiita-style-color);    
 }
 .qiita-style code {
-    background-color: #aaaaaa;
+    font-size: 16px;
+    color: var(--qiita-style-color);    
+    background-color: var(--qiita-inline-code-background-color);
+    padding: 1.6px 6.4px
+}
+
+/************************************************************************
+ * Qiita Header
+ ************************************************************************/
+
+.qiita-header-title {
+    font-size: 32px;
+    margin: 8px 0px 0px;
+    color: var(--qiita-style-color);    
+}
+.qiita-header-tags {
+    font-size: 14px;
+    margin: 8px 0px 0px;
+    color: var(--qiita-style-color);    
 }
 
 /************************************************************************
@@ -32,15 +94,26 @@
     background-color: var(--qiita-code-block-background-color);    
     background-blend-mode: unset;
 }
-.qiita-code-title {
+span.qiita-code-title {
     color: white;
     background-color: var(--qiita-code-title-background-color);
     margin-left: 25px;
     padding-inline: 5px;    
 }
 .qiita-code-block div {
-    color: white; 
+    font-family: var(--qita-code-font-family);
+    font-size: 14.4px;
+    color: var(--qiita-code-block-color);
+    padding: 7.2px;
 }
 .qiita-code-block .hljs-string {
-    color: white; 
+    font-family: var(--qita-code-font-family);
+    font-size: 14.4px;
+    color: var(--qiita-code-hljs-string); 
+}
+.qiita-code-block .hljs-link,
+.qiita-code-block .hljs-attr {
+    font-family: var(--qita-code-font-family);
+    font-size: 14.4px;
+    color: var(--qiita-code-hljs-link); 
 }
