@@ -10,6 +10,7 @@ import { OpenGraphProperties, OpenGraphImage, SuccessResult, ErrorResult } from 
 import vscode = require("vscode")
 import scraper = require("open-graph-scraper")
 
+const MAX_SCRAPER_RETRY_COUNT = 2
 
 function getLine(state: StateBlock, lineNo: number): string {
     return state.src.slice(state.bMarks[lineNo], state.eMarks[lineNo])
@@ -48,17 +49,21 @@ const linkCardRuler: RuleBlock = (state: StateBlock, startLine: number, endLine:
     }
 }
 
-type OgpData = {
+type OgpSuccessStatus = {
     readonly status: "succeeded"
     readonly title: string
     readonly imageUrl: string
 }
 
-type OgpStatus = OgpData | {
+type OgpFailStatus = {
     readonly status: "failed"
-} | {
-    readonly status: Promise<any>
 }
+type OgpTryingStatus = {
+    readonly status: "trying"
+    readonly count: number
+}
+
+type OgpStatus = OgpSuccessStatus | OgpFailStatus | OgpTryingStatus
 
 type LinkCardCache = {
     [key:string]:OgpStatus
@@ -84,33 +89,48 @@ function successResultToData(success: SuccessResult): OgpStatus {
 function refreshPreview(cache: LinkCardCache) {
     for (const url in cache) {
         const status = cache[url].status
-        if ((status === "succeeded") || (status === "failed")) {
-            continue
-        }
-        else {
+        if (status === "trying") {
+            // No refresh during "trying"
             return
         }
-    }
+    }    
     vscode.commands.executeCommand('markdown.preview.refresh')
 }
 
 export async function spawnLinkCard(url: string, cache: LinkCardCache): Promise<void> {    
-    scraper({ url: url}).then((result:SuccessResult|ErrorResult) => {
+    scraper({ url: url}).then((result:SuccessResult|ErrorResult) => {        
         if (! result.error) {
             cache[url] = successResultToData(result)
+            refreshPreview(cache)
+        }
+        else {
+            const ogpStatus = cache[url]
+            if ((ogpStatus.status === "trying") && (ogpStatus.count < MAX_SCRAPER_RETRY_COUNT)) {
+                cache[url] = { status: "trying", count: ogpStatus.count + 1 }
+                spawnLinkCard(url, cache)
+                return
+            }
+            else {
+                cache[url] = { status: "failed" }
+                refreshPreview(cache)
+            }
+        }                
+    }, (reason: any) => {
+        console.log(`${url}: failed: ${reason.toString()}`)
+        const ogpStatus = cache[url]
+        if ((ogpStatus.status === "trying") && (ogpStatus.count < MAX_SCRAPER_RETRY_COUNT)) {
+            cache[url] = { status: "trying", count: ogpStatus.count + 1 }
+            spawnLinkCard(url, cache)
+            return
         }
         else {
             cache[url] = { status: "failed" }
+            refreshPreview(cache)
         }
-        vscode.commands.executeCommand('markdown.preview.refresh')
-        refreshPreview(cache)
-    }, (reason: any) => {
-        cache[url] = { status: "failed"}
-        refreshPreview(cache)
     })
 }
 
-function getLinkCardHtml(url: URL, data: OgpData): string {
+function getLinkCardHtml(url: URL, data: OgpSuccessStatus): string {
     return `<div><a class="qiita-link-card" href="${url}">
         <div style="padding: 16px;">
             <div class="qiita-link-card-title">${data.title}</div>
@@ -123,12 +143,12 @@ const linkCardRender:(cache: LinkCardCache) => RenderRule = (cache: LinkCardCach
     const url: string = (tokens[idx].meta as URL).toString()
     const data = cache[url]
     if (data === undefined) {
-        cache[url] = { status: spawnLinkCard(url, cache) }
+        cache[url] = { status: "trying", count: 0 }
+        spawnLinkCard(url, cache)
         return `<p>${url}</p>`
     }
     else if (data.status === "succeeded") {
-        const imgHtml = getLinkCardHtml(tokens[idx].meta as URL, data)
-        console.log(imgHtml)
+        const imgHtml = getLinkCardHtml(tokens[idx].meta as URL, data)        
         return imgHtml
     }    
     else {       
