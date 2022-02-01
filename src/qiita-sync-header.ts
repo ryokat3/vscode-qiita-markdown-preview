@@ -44,8 +44,7 @@ const headerRuler: RuleBlock = (state: StateBlock, startLine: number, endLine: n
     return false
 }
 
-function renderTitle(title: string|undefined): string {
-    // return `<div style="font-size:xx-large">${(title !== undefined) ? title : "No Title"}</div>`
+function renderTitle(title: string|undefined): string {    
     return `<div class="qiita-header-title">${(title !== undefined) ? title : "No Title"}</div>`
 }
 

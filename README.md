@@ -9,7 +9,7 @@ Qiita Markdown syntax extensions are supported.
 - Qiita Style
 - Note
 - Code Block
-- Title and Tags (syntax of [Qiita-Sync](https://github.com/ryokat3/qiita-sync))
+- Title and Tags (for [Qiita-Sync](https://github.com/ryokat3/qiita-sync))
 
 ## Requirements
 
@@ -42,3 +42,7 @@ N/A
 * [GitHub連携でQiita記事を素敵な執筆環境で！](https://qiita.com/ryokat3/items/d054b95f68810f70b136)
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+
+
+
+

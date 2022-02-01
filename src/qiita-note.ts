@@ -20,10 +20,7 @@ type IconAssets = {
 }
 
 function props2html(icon: string, nodeType: string): string {    
-    return `<div class="qiita-note-${nodeType}">
-    <div class="qiita-note-body">
-    <span style="width:3%;height:3%;margin-top:auto;margin-bottom:auto;margin-left:10px;margin-right:10px">${icon}</span>
-    <span style="margin-top:auto;margin-bottom:auto">`
+    return `<div class="qiita-note-${nodeType}"><div class="qiita-note-body">${icon}<span class="qiita-note-content">`
 }
 
 const validate: ContainerValidateType = (params: string):boolean => {
