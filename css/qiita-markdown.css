@@ -10,7 +10,7 @@
     --qiita-code-block-color: #e3e3e3;
     --qiita-code-hljs-string: #88df4c;
     --qiita-code-hljs-link: #41b7d7;
-    --qiita-header-tags-icon: #666666;
+    --qiita-header-tags-icon: #666666;    
     --qiita-inline-code-background-color: #eeeeee;
     --qiita-note-info-background-color: #E5F8E2;
     --qiita-note-info-icon-color: #55C500;
@@ -121,9 +121,23 @@
     color: var(--qiita-style-color);    
 }
 .qiita-header-tags {
+    display:flex;
     font-size: 14px;
     margin: 8px 0px 0px;    
     color: var(--qiita-style-color);    
+}
+.qiita-header-tag {
+    margin-left: 12px;
+    color: var(--qiita-header-tags-icon);    
+}
+.qiita-header-tags-icon {
+    width: 2%;
+    height: 2%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: var(--qiita-header-tags-icon);    
 }
 
 /************************************************************************

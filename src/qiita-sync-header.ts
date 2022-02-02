@@ -48,10 +48,14 @@ function renderTitle(title: string|undefined): string {
     return `<div class="qiita-header-title">${(title !== undefined) ? title : "No Title"}</div>`
 }
 
+function renderTag(tag:string): string {
+    return `<a class="qiita-header-tag" href="https://qiita.com/tags/${tag}">${tag}</a>`
+}
+
 function renderTags(tags: string|undefined, tagsIcon: string): string  {    
-    return `<div class="qiita-header-tags" style="display:flex">
-    <div style="width:2%;height:2%;margin-top:auto;margin-bottom:auto;margin-left:10px;margin-right:10px">${tagsIcon}</div>
-    <div>${(tags !== undefined) ? tags : "No Tags"}</div>
+    return `<div class="qiita-header-tags">
+    <div class="qiita-header-tags-icon">${tagsIcon}</div>
+    <div>${(tags !== undefined) ? tags.split(',').map(renderTag).join(",  ") : "No Tags"}</div>
     </div>`
 }
 
