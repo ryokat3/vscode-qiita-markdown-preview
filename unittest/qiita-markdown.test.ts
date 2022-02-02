@@ -24,7 +24,6 @@ describe("markdown-it-qiita-note", () => {
         const html = mdit.render(fs.readFileSync(sample1).toString())
         saveHtml(sample1, html)
     })
-
     it("spawnLinkCard", async () => {        
         await spawnLinkCard("https://qiita.com/Qiita/items/c686397e4a0f4f11683d", Object.create(null))
         await spawnLinkCard("https://github.com/ryokat3/vscode-qiita-markdown-preview", Object.create(null))

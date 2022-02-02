@@ -168,6 +168,14 @@ span.qiita-code-title {
     color: var(--qiita-header-tags-icon)    
 }
 
+/* math */
+.qiita-math-block {
+    font-size: 18.56px;
+    font-family: KaTeX_Math KaTeX_Main;
+    margin: 16px 0px;
+    text-align: center;
+}
+
 /************************************************************************
  * Qiita Note
  ************************************************************************/

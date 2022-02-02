@@ -34,3 +34,8 @@ https://qiita.com/Qiita/items/c686397e4a0f4f11683d
     https://qiita.com/Qiita/items/c686397e4a0f4f11683d
 
 https://qiita.com/Qiita/ items/c686397e4a0f4f11683d
+
+```math
+\left( \sum_{k=1}^n a_k b_k \right)^{!!2} \leq
+\left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
