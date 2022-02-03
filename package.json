@@ -9,15 +9,25 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:vscode-qiita-markdown-preview.helloWorld"
-  ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "markdown.previewStyles": [
       "./css/qiita-markdown.css"
     ],
-    "markdown.markdownItPlugins": true
+    "markdown.markdownItPlugins": true,
+    "configuration": [
+      {
+        "title": "Qiita Markdown Preview",
+        "properties": {
+          "qiita-markdown-preview.enable" : {
+            "type": "boolean",
+            "description": "Enable Qiita Markdown Preview extension",
+            "default": true
+          }
+        }
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
