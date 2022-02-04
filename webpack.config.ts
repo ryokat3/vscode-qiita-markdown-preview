@@ -22,7 +22,7 @@ const commonConfig: Configuration = {
     mode: 'development',
     devtool: "source-map",
     target: "node",
-    watch: true,
+    watch: false,
     externals: {
         vscode: "commonjs vscode"
     },
