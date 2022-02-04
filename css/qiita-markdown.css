@@ -159,7 +159,7 @@
 span.qiita-code-title {
     color: white;
     background-color: var(--qiita-code-title-background-color);    
-    padding: 2px 5px 4px 8px 
+    padding: 1px 5px 4px 8px 
 }
 .qiita-code-block div {
     font-family: var(--qita-code-font-family);
