@@ -20,6 +20,8 @@
     --qiita-note-alert-icon-color: #D60A34;
     --qita-font-family: "YakuHanJPs", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
     --qita-code-font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+    --qiita-code-scrollbar-color: #A8A8A8;
+    --qiita-code-scrollbar-background-color: #F1F1F1;
 }
 
 /************************************************************************
@@ -155,6 +157,8 @@
 .qiita-code code {    
     background-color: var(--qiita-code-block-background-color);    
     background-blend-mode: unset;
+    scrollbar-color: var(--qiita-code-scrollbar-color) var(--qiita-code-scrollbar-background-color);
+    scrollbar-width: auto;
 }
 span.qiita-code-title {
     color: white;
@@ -165,11 +169,14 @@ span.qiita-code-title {
     font-family: var(--qita-code-font-family);
     font-size: 14.4px;
     color: var(--qiita-code-block-color);
-    /* padding: 7.2px; */
+    white-space: pre;
+	overflow-x: scroll;
+    scrollbar-color: var(--qiita-code-scrollbar-color) var(--qiita-code-scrollbar-background-color); /* TODO: not work */
+    scrollbar-width: auto; /* TODO: not work */    
 }
 .qiita-code-block .hljs-string {
     font-family: var(--qita-code-font-family);
-    font-size: 14.4px;
+    font-size: 14.4px;    
     color: var(--qiita-code-hljs-string); 
 }
 .qiita-code-block .hljs-link,

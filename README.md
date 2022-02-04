@@ -30,11 +30,9 @@ This extension contributes the following settings:
 
 N/A
 
-## Release Notes
+## Revision History
 
-### 0.0.1
 
-N/A
 
 -----------------------------------------------------------------------------------------------------------
 ### For more information
