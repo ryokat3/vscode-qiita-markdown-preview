@@ -41,6 +41,3 @@ N/A
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-
-
-
