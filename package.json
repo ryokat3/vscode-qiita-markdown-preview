@@ -8,11 +8,13 @@
   },
   "categories": [
     "Other"
-  ],
-  "activationEvents": [],
+  ],  
   "repository": "https://github.com/ryokat3/vscode-qiita-markdown-preview.git",
   "license": "SEE LICENSE IN LICENSE",
+  "publisher": "ryokat3",
   "main": "./out/extension.js",
+  "browser": "./out/extension.js",
+  "activationEvents": [],
   "contributes": {
     "markdown.previewStyles": [
       "./css/qiita-markdown.css"
@@ -33,6 +35,7 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
+    "package": "docker run -it -v $(pwd):/workspace vsce package",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
@@ -40,7 +43,7 @@
     "test": "node ./out/test/runTest.js",
     "unittest": "cross-env TS_NODE_PROJECT=tsconfig.json mocha --timeout 30000 --exit -r ts-node/register unittest/**/*.ts",
     "server": "http-server -d -c-1 -p 8080 html",
-    "clean": "shx rm -rf out"
+    "clean": "shx rm -rf out *.vsix"
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
