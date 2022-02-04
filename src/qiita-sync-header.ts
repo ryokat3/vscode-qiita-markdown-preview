@@ -69,6 +69,8 @@ const render:(assets: RenderAssets) => RenderRule = (assets: RenderAssets) => (t
 export const markdownItQiitaSyncHeader :PluginSimple = (md: MarkdownIt): void => {
     library.add(faTags)
 
+    console.log(`[Qiita-MD-Preview] markdownItQiitaSyncHeader activated`)
+
     md.block.ruler.before('fence', 'qiita-sync-header', headerRuler, {
         alt: [ 'paragraph', 'reference', 'blockquote', 'list' ]
       })

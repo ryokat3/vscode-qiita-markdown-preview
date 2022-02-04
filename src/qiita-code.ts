@@ -23,6 +23,7 @@ const render:(originalRule: RenderRule) => RenderRule = (originalRule: RenderRul
 }
 
 export const markdownItQiitaCode :PluginSimple = (md: MarkdownIt): void => {
+    console.log(`[Qiita-MD-Preview] markdownItQiitaCode activated`)
 
     const originalRule = md.renderer.rules['fence']
     if (originalRule !== undefined) {        

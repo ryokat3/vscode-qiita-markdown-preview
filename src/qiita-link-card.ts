@@ -156,7 +156,9 @@ const linkCardRender:(cache: LinkCardCache) => RenderRule = (cache: LinkCardCach
     }
 }
 
-export const markdownItQiitaLinkCard :PluginSimple = (md: MarkdownIt): void => {    
+export const markdownItQiitaLinkCard :PluginSimple = (md: MarkdownIt): void => {  
+    console.log(`[Qiita-MD-Preview] markdownItQiitaLinkCard activated`)
+
     const cache: LinkCardCache = Object.create(null)
 
     md.block.ruler.before('paragraph', 'qiita-link-card', linkCardRuler)

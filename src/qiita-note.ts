@@ -53,6 +53,8 @@ const render: (props: IconAssets) => ContainerRenderType = (props: IconAssets) =
 export const markdownItQiitaNote :PluginSimple = (md: MarkdownIt): void => {
     library.add(faCheckCircle, faExclamationCircle, faTimesCircle)
 
+    console.log(`[Qiita-MD-Preview] markdownItQiitaNote activated`)
+
     MarkdownItContainer(md, QIITA_NOTE_NAME, {
         marker: ':',
         validate: validate,
