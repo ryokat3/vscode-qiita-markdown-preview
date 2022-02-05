@@ -1,9 +1,43 @@
+<!--
 # Change Log
 
-All notable changes to the "vscode-qiita-markdown-preview" extension will be documented in this file.
+Tags:
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Added          for new features.
+- Changed        for changes in existing functionality.
+- Deprecated     for soon-to-be removed features.
+- Fixed          for any bug fixes.
+- Security       in case of vulnerabilities.
 
-## [Unreleased]
 
-- Initial release
+Policy:
+
+- Keep an Unreleased section at the top to track upcoming changes.
+- YYYY-MM-DD for date format
+
+
+# Semantic Versioning
+
+- MAJOR version     when you make incompatible API changes,
+- MINOR version     when you add functionality in a backwards compatible manner, and
+- PATCH version     when you make backwards compatible bug fixes.
+
+-->
+
+# Change Log
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/)
+and this project adheres to [Semantic Versioning](http://semver.org/).
+
+## v0.0.4 - 2022-02-05
+
+### Changed
+
+- README.md
+- CHANGELOG.md
+
+## v0.0.3 - 2022-02-05
+
+- First release

@@ -1,8 +1,8 @@
 {
   "name": "vscode-qiita-markdown-preview",
-  "displayName": "vscode-qiita-markdown-preview",
+  "displayName": "Qiita Markdown Preview",
   "description": "VSCode extension to preview Qiita markdown",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.63.0"
   },

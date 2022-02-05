@@ -1,6 +1,8 @@
-# VSCode Extension for Qiita Markdown Preview
+# Qiita Markdown Preview
 
-A plugin for VS Code's build-in markdown preview to display Qiita Markdown syntax and style
+VSCode extesion for build-in markdown preview to display Qiita Markdown syntax and style
+
+![Samples](img/qiita-markdown-preview-samples.png)
 
 ## Features
 
@@ -8,30 +10,28 @@ Qiita Markdown syntax extensions are supported.
 
 - Qiita Style
 - Note
-- Code Block
+- Code Block (includes mathematical formulas)
+- Link Card
 - Title and Tags (for [Qiita-Sync](https://github.com/ryokat3/qiita-sync))
-
-## Requirements
-
-N/A
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+**NOTE**: Check `Enable` check box and reload windows (or restart vscode) to enable this extension.   
 
-For example:
+![Setting](img/qiita-markdown-preview-setting.png)
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+- `qiita-markdown-preview.enable`: Enable Qiita Markdown Preview extension (default: false).
 
 ## Known Issues
 
-N/A
+- Refresh the markdown preview if some link cards are not displayed.
 
 ## Revision History
 
+| Version  | Date       | Summary                                                           |
+|----------|------------|-------------------------------------------------------------------|
+| v0.0.4   | 2022-02-05 | - Updated documents                                               |
+| v0.0.3   | 2022-02-05 | - First release                                                   |
 
 
 -----------------------------------------------------------------------------------------------------------
