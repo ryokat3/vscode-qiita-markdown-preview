@@ -27,6 +27,6 @@ export const markdownItQiitaCode :PluginSimple = (md: MarkdownIt): void => {
 
     const originalRule = md.renderer.rules['fence']
     if (originalRule !== undefined) {        
-        md.renderer.rules['fence'] = render(originalRule)    
+        md.renderer.rules['fence'] = render(originalRule)   
     }
 }

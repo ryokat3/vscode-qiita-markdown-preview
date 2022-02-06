@@ -63,7 +63,7 @@ const render:(assets: RenderAssets) => RenderRule = (assets: RenderAssets) => (t
     const lines: string[] = tokens[idx].meta    
     const header = new Map(lines.map((line: string)=>line.split(':', 2).map(((i)=>i.trim()))).filter((kv: string[]) => kv.length === 2).map((kv)=>[kv[0], kv[1]]))    
 
-    return `<div class="qiita-header">${renderTitle(header.get('title'))}${renderTags(header.get('tags'), assets.tagsIcon)}</div>`
+    return (header.has('title') || header.has('tags')) ? `<div class="qiita-header">${renderTitle(header.get('title'))}${renderTags(header.get('tags'), assets.tagsIcon)}</div>` : ""
 }
 
 export const markdownItQiitaSyncHeader :PluginSimple = (md: MarkdownIt): void => {

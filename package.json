@@ -2,7 +2,7 @@
   "name": "vscode-qiita-markdown-preview",
   "displayName": "Qiita Markdown Preview",
   "description": "VSCode extension to preview Qiita markdown",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.63.0"
   },
@@ -29,7 +29,7 @@
           "qiita-markdown-preview.enable": {
             "type": "boolean",
             "description": "Enable Qiita Markdown Preview extension",
-            "default": false
+            "default": true
           }
         }
       }
@@ -38,8 +38,7 @@
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "package": "docker run -it -v $(pwd):/workspace vsce package",
-    "compile": "webpack-cli",
-    "watch": "tsc -watch -p ./",
+    "compile": "webpack-cli",    
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",

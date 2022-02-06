@@ -23,6 +23,9 @@ const commonConfig: Configuration = {
     devtool: "source-map",
     target: "node",
     watch: false,
+    watchOptions: {
+        ignored: [ '**/node_modules', '**/unittest', 'src/test/**']
+    },
     externals: {
         vscode: "commonjs vscode"
     },

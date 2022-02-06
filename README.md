@@ -1,5 +1,9 @@
 # Qiita Markdown Preview
 
+[![version](https://vsmarketplacebadge.apphb.com/version/ryokat3.vscode-qiita-markdown-preview.svg)](https://marketplace.visualstudio.com/items?itemName=ryokat3.vscode-qiita-markdown-preview)
+[![installs](https://vsmarketplacebadge.apphb.com/installs/ryokat3.vscode-qiita-markdown-preview.svg)](https://marketplace.visualstudio.com/items?itemName=ryokat3.vscode-qiita-markdown-preview)
+[![downloads](https://vsmarketplacebadge.apphb.com/downloads/ryokat3.vscode-qiita-markdown-preview.svg)](https://marketplace.visualstudio.com/items?itemName=ryokat3.vscode-qiita-markdown-preview)
+
 VSCode extesion for build-in markdown preview to display Qiita Markdown syntax and style
 
 ![Samples](img/qiita-markdown-preview-samples.png)
@@ -16,11 +20,7 @@ Qiita Markdown syntax extensions are supported.
 
 ## Extension Settings
 
-**NOTE**: Check `Enable` check box and reload windows (or restart vscode) to enable this extension.   
-
-![Setting](img/qiita-markdown-preview-setting.png)
-
-- `qiita-markdown-preview.enable`: Enable Qiita Markdown Preview extension (default: false).
+- `qiita-markdown-preview.enable`: Enable Qiita Markdown Preview extension (default: true)
 
 ## Known Issues
 
@@ -30,8 +30,9 @@ Qiita Markdown syntax extensions are supported.
 
 | Version  | Date       | Summary                                                           |
 |----------|------------|-------------------------------------------------------------------|
-| v0.0.4   | 2022-02-05 | - Updated documents                                               |
-| v0.0.3   | 2022-02-05 | - First release                                                   |
+| v0.1.0   | 2022-02-06 | Automatic reload window on configuration change                   |
+| v0.0.4   | 2022-02-05 | Updated documents                                                 |
+| v0.0.3   | 2022-02-05 | First release                                                     |
 
 
 -----------------------------------------------------------------------------------------------------------

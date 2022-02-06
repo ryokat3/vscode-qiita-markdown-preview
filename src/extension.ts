@@ -9,13 +9,24 @@ import { markdownItQiitaCode } from "./qiita-code"
 import { markdownItQiitaStyle } from "./qiita-style"
 import { markdownItQiitaLinkCard } from "./qiita-link-card"
 
-const configSection = 'qiita-markdown-preview';
-const enableKey = 'enable';
+const configSection = 'qiita-markdown-preview'
+const enableKey = 'enable'
 
 export function activate(context: ExtensionContext) {
 	console.log(`[qiita-markdown-preview] activated`)
 	
-	return (vscode.workspace.getConfiguration(configSection).get<boolean>(enableKey)) ? {
+	context.subscriptions.push(vscode.workspace.onDidChangeConfiguration((e: vscode.ConfigurationChangeEvent) => {
+        if (e.affectsConfiguration(configSection)) {
+			vscode.window.showInformationMessage("Reload window to change \"Qiita Markdown Preview\" configuration", "Reload")
+			.then((selectedAction: "Reload"|undefined)=> {
+				if (selectedAction === "Reload") {
+					vscode.commands.executeCommand('workbench.action.reloadWindow')
+				}
+			})            
+        }
+    }))
+		
+	return vscode.workspace.getConfiguration(configSection).get<boolean>(enableKey) ? {
 		extendMarkdownIt(md: MarkdownIt) {			
 			return md.use(markdownItQiitaStyle)
 				.use(markdownItQiitaNote)
@@ -24,7 +35,7 @@ export function activate(context: ExtensionContext) {
 				.use(markdownItQiitaLinkCard)
 		}
 	} : {
-		extendMarkdownIt(md: MarkdownIt) {
+		extendMarkdownIt(md: MarkdownIt) {			
 			return md
 		}		
 	}
