@@ -20,7 +20,20 @@ Qiita Markdown syntax extensions are supported.
 
 ## Extension Settings
 
-- `qiita-markdown-preview.enable`: Enable Qiita Markdown Preview extension (default: true)
+- `qiita-markdown-preview.status`: Enable/Disable Qiita Markdown Preview extension (default: 'null').
+    The actual status is defined as the table below
+
+    | User      | Workspace | Actual    |  
+    |-----------|-----------|-----------|
+    | enable    | eanble    | enalbe    |  
+    | enable    | disable   | disable   |  
+    | enable    | null      | enalbe    |  
+    | disable   | eanble    | enalbe    |  
+    | disable   | disable   | disable   |  
+    | disable   | null      | disable   |   
+    | null      | eanble    | enalbe    |  
+    | null      | disable   | disable   |  
+    | null      | null      | enable    | 
 
 ## Known Issues
 
@@ -30,7 +43,7 @@ Qiita Markdown syntax extensions are supported.
 
 | Version  | Date       | Summary                                                           |
 |----------|------------|-------------------------------------------------------------------|
-| v0.1.1   | 2022-02-09 | CSS style enhanced                                                |
+| v0.2.0   | 2022-02-09 | CSS style enhanced, Configuration changed                         |
 | v0.1.0   | 2022-02-06 | Automatic reload window on configuration change                   |
 | v0.0.4   | 2022-02-05 | Updated documents                                                 |
 | v0.0.3   | 2022-02-05 | First release                                                     |

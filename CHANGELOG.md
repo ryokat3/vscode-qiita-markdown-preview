@@ -31,7 +31,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## v0.1.1 (2022-02-09)
+## v0.2.0 (2022-02-09)
 
 ### Added
 
@@ -39,6 +39,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+- Chnaged 'enable' setting to 'status' ('enable', 'disable', or 'null')
 - Changed CSS to add maring to notes
 - Changed NPM script for packaging
 

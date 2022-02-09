@@ -2,7 +2,7 @@
   "name": "vscode-qiita-markdown-preview",
   "displayName": "Qiita Markdown Preview",
   "description": "VSCode extension to preview Qiita markdown",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.63.0"
   },
@@ -26,10 +26,20 @@
       {
         "title": "Qiita Markdown Preview",
         "properties": {
-          "qiita-markdown-preview.enable": {
-            "type": "boolean",
-            "description": "Enable Qiita Markdown Preview extension",
-            "default": true
+          "qiita-markdown-preview.status": {
+            "type": "string",
+            "description": "Enable/Disable status of Qiita Markdown Preview",
+            "enum": [
+              "enable",
+              "disable",
+              "null"
+            ],
+            "enumDescriptions": [
+              "Enable Qiita Markdown Preview",
+              "Disable Qiita Markdown Preview",
+              "No settings"
+            ],
+            "default": "null"
           }
         }
       }
