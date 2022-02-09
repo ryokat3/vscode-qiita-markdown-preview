@@ -5,6 +5,7 @@
 :root {
     --qiita-style-background-color: #FFFFFF;
     --qiita-style-color: #333333;
+    --qiita-style-boder-color: #cccccc;
     --qiita-code-block-background-color: #364549;
     --qiita-code-title-background-color: #777777;
     --qiita-code-block-color: #e3e3e3;
@@ -21,7 +22,7 @@
     --qita-font-family: "YakuHanJPs", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
     --qita-code-font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
     --qiita-code-scrollbar-color: #A8A8A8;
-    --qiita-code-scrollbar-background-color: #F1F1F1;
+    --qiita-code-scrollbar-background-color: #F1F1F1;    
 }
 
 /************************************************************************
@@ -92,7 +93,7 @@
 }
 .qiita-style p {
     font-size: 16px;
-    color: var(--qiita-style-color);    
+    color: var(--qiita-style-color);     
 }
 .qiita-style code {
     font-size: 16px;
@@ -108,6 +109,29 @@
     font-size: 16px;
     color: var(--qiita-style-color);
     margin: 24px 0px  
+}
+.qiita-style td {
+    font-size: 16px;
+    padding: 8px 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--qiita-style-boder-color);
+    border-collapse: collapse;
+}
+.qiita-style th {
+    font-size: 16px;
+    padding: 8px 10px;
+    background: var(--qiita-style-background-color);    
+    border-width: 1px;
+    border-style: solid;    
+    border-color: var(--qiita-style-boder-color);
+    border-collapse: collapse;
+}
+.qiita-style tr:nth-child(odd) {
+    background: var(--qiita-inline-code-background-color);
+}
+.qiita-style tr:nth-child(even) {
+    background: var(--qiita-style-background-color);
 }
 /************************************************************************
  * Qiita Header
@@ -203,16 +227,18 @@ span.qiita-code-title {
 .qiita-note-content {
     margin-top: auto;
     margin-bottom: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    display: flex;
+    align-items: flex-start;
 }
 .qiita-note-info-icon,
 .qiita-note-warn-icon,
 .qiita-note-alert-icon {
     width: 3%;
     height: 3%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 10px;
-    margin-right: 10px
+    margin: 0px 8px 0px 0px;
+    padding: 4px 0px 0px
 }
 .qiita-note-info {
     background-color: var(--qiita-note-info-background-color);
@@ -223,12 +249,14 @@ span.qiita-code-title {
 }
 .qiita-note-warn {
     background-color: var(--qiita-note-warn-background-color);    
+    margin: 24px 0px;    
 }
 .qiita-note-warn-icon {
     color: var(--qiita-note-warn-icon-color);
 }
 .qiita-note-alert {
     background-color: var(--qiita-note-alert-background-color);    
+    margin: 24px 0px;    
 }
 .qiita-note-alert-icon {
     color: var(--qiita-note-alert-icon-color);

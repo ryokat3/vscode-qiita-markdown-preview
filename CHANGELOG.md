@@ -31,7 +31,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## v0.1.0 - 2022-02-06
+## v0.1.1 (2022-02-09)
+
+### Added
+
+- Added CSS style for table
+
+### Changed
+
+- Changed CSS to add maring to notes
+- Changed NPM script for packaging
+
+## v0.1.0 (2022-02-06)
 
 ### Added
 
@@ -42,13 +53,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Default configuration value is `true`
 
-## v0.0.4 - 2022-02-05
+## v0.0.4 (2022-02-05)
 
 ### Changed
 
 - Updated README.md
 - Updated CHANGELOG.md
 
-## v0.0.3 - 2022-02-05
+## v0.0.3 (2022-02-05)
 
 - First release
