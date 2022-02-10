@@ -1,3 +1,28 @@
+/****************************************************************
+
+qiita-note.ts
+
+# Qiita Syntax (3 variants)
+
+:::note info
+<message>
+:::
+
+:::note warn
+<message>
+:::
+
+:::note alert
+<message>
+:::
+
+The annotation of note notation can be omitted.
+This case should be regarded as 'info'
+
+Refer: https://github.com/ryokat3/vscode-qiita-markdown-preview/issues/1        
+
+****************************************************************/
+
 import { PluginSimple } from "markdown-it"
 import MarkdownIt = require("markdown-it")
 import Renderer = require("markdown-it/lib/renderer")
@@ -25,8 +50,9 @@ function props2html(icon: string, nodeType: string): string {
 
 const validate: ContainerValidateType = (params: string):boolean => {
     if (params.startsWith("note")) {
-        const words = params.split(/\s+/)
-        if ((words.length === 2) && ((words[1] === 'info') || (words[1] === 'warn') || (words[1] === 'alert'))) {
+        // Updated by issue#1 
+        const words = params.trim().split(/\s+/)
+        if ((words.length === 1) || ((words.length === 2) && ((words[1] === 'info') || (words[1] === 'warn') || (words[1] === 'alert')))) {
             return true
         }
     }
@@ -37,7 +63,9 @@ const render: (props: IconAssets) => ContainerRenderType = (props: IconAssets) =
     const token = tokens[index]
 
     if (token.nesting === 1) {
-        const noteType = token.info.split(/\s+/)[1]
+        // Updated by issue#1 
+        const keywords = token.info.trim().split(/\s+/)
+        const noteType = (keywords.length === 2) ? keywords[1] : 'info'
         switch (noteType) {
             case 'info': return props2html(props.info, noteType)                
             case 'warn': return props2html(props.warn, noteType)

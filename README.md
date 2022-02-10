@@ -43,6 +43,7 @@ Qiita Markdown syntax extensions are supported.
 
 | Version  | Date       | Summary                                                           |
 |----------|------------|-------------------------------------------------------------------|
+| v0.2.1   | 2022-02-10 | Improved note renderring                                          |
 | v0.2.0   | 2022-02-09 | CSS style enhanced, Configuration changed                         |
 | v0.1.0   | 2022-02-06 | Automatic reload window on configuration change                   |
 | v0.0.4   | 2022-02-05 | Updated documents                                                 |
