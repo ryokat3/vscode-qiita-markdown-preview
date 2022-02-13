@@ -31,6 +31,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## v0.2.2 (2022-02-13)
+
+### Fixed
+
+- Make 'noteXXX' invalid as note notation (issue #1)
+
 ## v0.2.1 (2022-02-10)
 
 ### Changed

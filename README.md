@@ -43,6 +43,7 @@ Qiita Markdown syntax extensions are supported.
 
 | Version  | Date       | Summary                                                           |
 |----------|------------|-------------------------------------------------------------------|
+| v0.2.2   | 2022-02-13 | Exclude 'notexxx' from note notation                              |
 | v0.2.1   | 2022-02-10 | Improved note renderring                                          |
 | v0.2.0   | 2022-02-09 | CSS style enhanced, Configuration changed                         |
 | v0.1.0   | 2022-02-06 | Automatic reload window on configuration change                   |
@@ -53,6 +54,7 @@ Qiita Markdown syntax extensions are supported.
 -----------------------------------------------------------------------------------------------------------
 ### For more information
 
+* [Qiita拡張記法プラグイン】Qiita記事をVSCodeで書くなら今すぐインストール！](https://qiita.com/ryokat3/items/fe61d9234be2e147cb7f)
 * [GitHub連携でQiita記事を素敵な執筆環境で！](https://qiita.com/ryokat3/items/d054b95f68810f70b136)
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
