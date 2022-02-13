@@ -52,6 +52,10 @@ const validate: ContainerValidateType = (params: string):boolean => {
     if (params.startsWith("note")) {
         // Updated by issue#1 
         const words = params.trim().split(/\s+/)
+        // false if word[0] is "notehoge" (issue #1)
+        if ((words.length === 0) || (words[0].length !== 4)) {
+            return false
+        }
         if ((words.length === 1) || ((words.length === 2) && ((words[1] === 'info') || (words[1] === 'warn') || (words[1] === 'alert')))) {
             return true
         }
